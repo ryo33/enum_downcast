@@ -1,0 +1,69 @@
+[package]
+name = "enum_downcast"
+version = "0.1.0"
+edition = "2021"
+description = "Safe downcasting for enums"
+categories = ["rust-patterns"]
+keywords = ["enum", "downcast"]
+license = "MIT OR Apache-2.0"
+readme = "../../README.md"
+repository = "https://github.com/ryo33/enum_downcast"
+
+[features]
+default = []
+derive = ["enum_downcast_derive"]
+
+[dependencies]
+enum_downcast_derive = { version = "0.1.0", path = "../enum_downcast_derive", optional = true }
+
+[dev-dependencies]
+# for examples/enum_dispatch.rs
+enum_dispatch = "*"
+# for examples/other_derives.rs
+serde = { version = "1", features = ["derive"] }
+serde_json = "*"
+strum = { version = "*", features = ["derive"] }
+
+[[example]]
+name = "basic"
+required-features = ["derive"]
+path = "../../examples/basic.rs"
+
+[[example]]
+name = "orphan_rule"
+required-features = ["derive"]
+path = "../../examples/orphan_rule.rs"
+
+[[example]]
+name = "skip"
+required-features = ["derive"]
+path = "../../examples/skip.rs"
+
+[[example]]
+name = "custom_impl"
+path = "../../examples/custom_impl.rs"
+
+[[example]]
+name = "partial_custom_impl"
+required-features = ["derive"]
+path = "../../examples/partial_custom_impl.rs"
+
+[[example]]
+name = "generics"
+required-features = ["derive"]
+path = "../../examples/generics.rs"
+
+[[example]]
+name = "enum_dispatch"
+required-features = ["derive"]
+path = "../../examples/enum_dispatch.rs"
+
+[[example]]
+name = "other_derives"
+required-features = ["derive"]
+path = "../../examples/other_derives.rs"
+
+[[example]]
+name = "specialization"
+required-features = ["derive"]
+path = "../../examples/specialization.rs"
