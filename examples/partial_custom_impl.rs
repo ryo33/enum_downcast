@@ -41,6 +41,17 @@ impl AsVariant<Donut> for Enum {
 }
 
 fn main() {
+    // both coffee and donut
+    let container = Enum::CoffeeAndDonut {
+        coffee: Coffee,
+        donut: Donut,
+    };
+
+    assert!(container.enum_downcast_ref::<Player>().is_none());
+    assert!(container.enum_downcast_ref::<Enemy>().is_none());
+    assert!(container.enum_downcast_ref::<Coffee>().is_some());
+    assert!(container.enum_downcast_ref::<Donut>().is_some());
+    
     // player in container
     let container = Enum::Player(Player {
         name: "Player".to_string(),
@@ -61,14 +72,4 @@ fn main() {
     assert_eq!(container.enum_downcast_ref::<Enemy>().unwrap().power, 100);
     assert!(container.enum_downcast_ref::<Coffee>().is_none());
     assert!(container.enum_downcast_ref::<Donut>().is_none());
-
-    let container = Enum::CoffeeAndDonut {
-        coffee: Coffee,
-        donut: Donut,
-    };
-
-    assert!(container.enum_downcast_ref::<Player>().is_none());
-    assert!(container.enum_downcast_ref::<Enemy>().is_none());
-    assert!(container.enum_downcast_ref::<Coffee>().is_some());
-    assert!(container.enum_downcast_ref::<Donut>().is_some());
 }
