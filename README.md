@@ -14,7 +14,7 @@ Safe downcasting for enums
 enum Enum {
     Player(Player),
     Enemy(Enemy),
-    Items { vec: Vec<Item> },
+    Items { vec: Vec<Item> }, // derived code will be identical to if it were `Items(Vec<Items>)`
     #[enum_downcast(skip)]
     Other,
 }
@@ -30,6 +30,8 @@ You need `derive` feature to use the derive macro.
 You can see more examples in
 [/examples](https://github.com/ryo33/enum_downcast/tree/main/examples).
 
+My favorite one is: https://github.com/ryo33/enum_downcast/blob/75adcbc8d24adb4e9d7b3c873e92bfff0dde7882/examples/partial_custom_impl.rs#L44-L53
+
 ## Features
 
 - completely `#![no_std]`
@@ -41,7 +43,7 @@ You can see more examples in
   [example](https://github.com/ryo33/enum_downcast/tree/main/examples/generics.rs))
 - custom downcast implementation without derive macro (see
   [example](https://github.com/ryo33/enum_downcast/tree/main/examples/custom_impl.rs))
-- partial custom downcast implementation for variants with
+- partial custom downcast implementation for some variants with
   `#[enum_downcast(skip)]` (see
   [example](https://github.com/ryo33/enum_downcast/tree/main/examples/partial_custom_impl.rs))
 - compatible with other macros, such as `serde`, `strum`, and `enum_dispatch`
