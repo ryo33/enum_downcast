@@ -30,7 +30,7 @@ You need `derive` feature to use the derive macro.
 You can see more examples in
 [/examples](https://github.com/ryo33/enum_downcast/tree/main/examples).
 
-My favorite one is: https://github.com/ryo33/enum_downcast/blob/75adcbc8d24adb4e9d7b3c873e92bfff0dde7882/examples/partial_custom_impl.rs#L44-L53
+My favorite one is one about custom downcast that allows interesting behavior like: https://github.com/ryo33/enum_downcast/blob/75adcbc8d24adb4e9d7b3c873e92bfff0dde7882/examples/partial_custom_impl.rs#L44-L53
 
 ## Features
 
