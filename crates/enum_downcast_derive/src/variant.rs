@@ -44,7 +44,7 @@ pub(crate) fn generate_variant(item: &syn::ItemEnum, variant: &syn::Variant) -> 
     };
     quote! {
         impl #bound enum_downcast::IntoVariant<#variant_ty> for #enum_name #generics {
-            fn into_variant(self) -> Result<#variant_ty, Self>
+            fn into_variant(self) -> ::core::result::Result<#variant_ty, Self>
             where
                 Self: Sized {
                 match self {
@@ -106,7 +106,7 @@ mod tests {
         let actual = generate_variant(&input, &variant);
         let expected = quote! {
             impl enum_downcast::IntoVariant<String> for Enum {
-                fn into_variant(self) -> Result<String, Self>
+                fn into_variant(self) -> ::core::result::Result<String, Self>
                 where
                     Self: Sized
                 {
@@ -150,7 +150,7 @@ mod tests {
         let actual = generate_variant(&input, &variant);
         let expected = quote! {
             impl <T> enum_downcast::IntoVariant<String> for Enum<T> {
-                fn into_variant(self) -> Result<String, Self>
+                fn into_variant(self) -> ::core::result::Result<String, Self>
                 where
                     Self: Sized
                 {
@@ -194,7 +194,7 @@ mod tests {
         let actual = generate_variant(&input, &variant);
         let expected = quote! {
             impl <T: Clone> enum_downcast::IntoVariant<String> for Enum<T> {
-                fn into_variant(self) -> Result<String, Self>
+                fn into_variant(self) -> ::core::result::Result<String, Self>
                 where
                     Self: Sized
                 {
@@ -256,7 +256,7 @@ mod tests {
         let actual = generate_variant(&input, &variant);
         let expected = quote! {
             impl <T> enum_downcast::IntoVariant<MyNumber<T> > for Enum<T> {
-                fn into_variant(self) -> Result<MyNumber<T>, Self>
+                fn into_variant(self) -> ::core::result::Result<MyNumber<T>, Self>
                 where
                     Self: Sized
                 {

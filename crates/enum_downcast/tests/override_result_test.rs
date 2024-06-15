@@ -1,6 +1,8 @@
 #[test]
 #[cfg(feature = "derive")]
-fn override_Result_test() {
+fn override_result_test() {
+    #![allow(dead_code)]
+    
     use enum_downcast::EnumDowncast;
     
     type Result = ();
