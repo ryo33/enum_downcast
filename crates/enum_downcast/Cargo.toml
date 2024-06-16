@@ -1,6 +1,6 @@
 [package]
 name = "enum_downcast"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "Safe downcasting for enums"
 categories = ["rust-patterns"]
@@ -14,7 +14,7 @@ default = []
 derive = ["enum_downcast_derive"]
 
 [dependencies]
-enum_downcast_derive = { version = "0.1.0", path = "../enum_downcast_derive", optional = true }
+enum_downcast_derive = { version = "0.2.0", path = "../enum_downcast_derive", optional = true }
 
 [dev-dependencies]
 # for examples/enum_dispatch.rs
