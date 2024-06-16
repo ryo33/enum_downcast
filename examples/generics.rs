@@ -31,3 +31,8 @@ fn main() {
     let enemy_ref = container.enum_downcast_ref::<Enemy<u32>>().unwrap();
     assert_eq!(enemy_ref.0, 100);
 }
+
+#[test]
+fn test() {
+    main();
+}

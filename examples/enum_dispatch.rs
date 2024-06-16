@@ -56,3 +56,8 @@ fn main() {
     );
     assert!(container.enum_downcast_ref::<Player>().is_none());
 }
+
+#[test]
+fn test() {
+    main();
+}

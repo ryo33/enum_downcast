@@ -51,3 +51,8 @@ fn main() {
     assert!(container.enum_downcast_ref::<usize>().is_none());
     assert!(container.enum_downcast_ref::<&str>().is_none());
 }
+
+#[test]
+fn test() {
+    main();
+}

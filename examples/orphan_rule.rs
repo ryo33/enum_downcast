@@ -27,3 +27,8 @@ fn main() {
     let number_ref = container.enum_downcast_ref::<u32>().unwrap();
     assert_eq!(*number_ref, 100);
 }
+
+#[test]
+fn test() {
+    main();
+}

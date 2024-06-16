@@ -21,3 +21,8 @@ fn main() {
     assert!(container.enum_downcast_ref::<String>().is_none());
     assert!(container.enum_downcast_ref::<i32>().is_none());
 }
+
+#[test]
+fn test() {
+    main();
+}

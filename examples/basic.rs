@@ -6,6 +6,8 @@ struct Player {
 struct Enemy {
     power: u32,
 }
+
+#[allow(dead_code)]
 struct Item(String);
 
 #[derive(EnumDowncast)]
@@ -50,4 +52,9 @@ fn main() {
 
     assert!(container.enum_downcast_ref::<Player>().is_none());
     assert!(container.enum_downcast_ref::<Enemy>().is_none());
+}
+
+#[test]
+fn test() {
+    main();
 }

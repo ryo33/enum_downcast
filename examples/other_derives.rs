@@ -61,3 +61,8 @@ fn main() {
     // discrimninants
     assert_eq!(Enum::VARIANTS, &["Player", "Enemy", "Items"]);
 }
+
+#[test]
+fn test() {
+    main();
+}
