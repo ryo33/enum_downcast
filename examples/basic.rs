@@ -52,6 +52,14 @@ fn main() {
 
     assert!(container.enum_downcast_ref::<Player>().is_none());
     assert!(container.enum_downcast_ref::<Enemy>().is_none());
+
+    for item in container
+        .enum_downcast_ref::<Vec<Item>>()
+        .into_iter()
+        .flatten()
+    {
+        println!("{}", item.0);
+    }
 }
 
 #[test]
